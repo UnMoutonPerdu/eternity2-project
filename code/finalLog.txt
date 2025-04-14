@@ -1,0 +1,42 @@
+//// Advanced - Sans Tabou \\\\
+Instance A:
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 0.03 minutes
+[INFO] Number of conflicts: 0
+[INFO] Feasible solution: True
+[INFO] Sanity check passed: True
+***********************************************************
+
+Instance B:
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 3.01 minutes
+[INFO] Number of conflicts: 0
+[INFO] Feasible solution: True
+[INFO] Sanity check passed: True
+***********************************************************
+
+Instance C:
+
+
+Instance D:
+
+
+Instance E:
+
+
+//// Advanced - Avec Tabou \\\\
+Instance A:
+
+
+Instance B:
+
+
+Instance C:
+
+
+Instance D:
+
+
+Instance E:
