@@ -1,3 +1,122 @@
+//// Valeurs - Solver Heuristic \\\\
+Instance A:
+Mean conflicts: 7.58
+Variance conflicts: 22.7636
+Best value: 0
+
+Seed: 0.18062110343039572
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 0.0 minutes
+[INFO] Number of conflicts: 0
+[INFO] Feasible solution: True
+[INFO] Sanity check passed: True
+***********************************************************
+
+Instance B:
+Mean conflicts: 14.18
+Variance conflicts: 6.5876
+Best value: 7
+
+Seed: 0.18062110343039572
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 0.0 minutes
+[INFO] Number of conflicts: 10
+[INFO] Feasible solution: False
+[INFO] Sanity check passed: True
+***********************************************************
+
+Instance C:
+Mean conflicts: 26.5
+Variance conflicts: 10.21
+Best value: 19
+
+Seed: 0.18062110343039572
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 0.01 minutes
+[INFO] Number of conflicts: 19
+[INFO] Feasible solution: False
+[INFO] Sanity check passed: True
+***********************************************************
+
+Instance D:
+Mean conflicts: 32.4
+Variance conflicts: 13.199999999999998
+Best value: 23
+
+Seed: 0.18062110343039572
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 0.01 minutes
+[INFO] Number of conflicts: 23
+[INFO] Feasible solution: False
+[INFO] Sanity check passed: True
+***********************************************************
+
+Instance E:
+Mean conflicts: 37.22
+Variance conflicts: 13.531600000000001
+Best value: 27
+
+Seed: 0.18062110343039572
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 0.02 minutes
+[INFO] Number of conflicts: 27
+[INFO] Feasible solution: False
+[INFO] Sanity check passed: True
+***********************************************************
+
+Instance Complete:
+Mean conflicts: 96.56
+Variance conflicts: 24.326400000000003
+Best value: 83
+
+Seed: 0.18062110343039572
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 0.72 minutes
+[INFO] Number of conflicts: 82
+[INFO] Feasible solution: False
+[INFO] Sanity check passed: True
+***********************************************************
+
+####################################################################################
+
+//// Valeurs - Solver Local Search \\\\
+Instance A:
+Executed time: 0.005556344985961914
+Number Conflicts: 0
+
+Instance B:
+Mean conflicts: 14.18
+Variance conflicts: 6.5876
+Best value: 7
+
+Instance C:
+Mean conflicts: 26.5
+Variance conflicts: 10.21
+Best value: 19
+
+Instance D:
+Mean conflicts: 32.4
+Variance conflicts: 13.199999999999998
+Best value: 23
+
+Instance E:
+Mean conflicts: 37.22
+Variance conflicts: 13.531600000000001
+Best value: 27
+
+Instance Complete:
+Mean conflicts: 96.56
+Variance conflicts: 24.326400000000003
+Best value: 83
+
+####################################################################################
+
 //// Advanced - Sans Tabou \\\\
 Instance A:
 ***********************************************************
@@ -25,13 +144,20 @@ Instance D:
 
 Instance E:
 
+####################################################################################
 
 //// Advanced - Avec Tabou \\\\
 Instance A:
 
 
 Instance B:
-
+***********************************************************
+[INFO] Solution obtained
+[INFO] Execution time: 0.98 minutes
+[INFO] Number of conflicts: 0
+[INFO] Feasible solution: True
+[INFO] Sanity check passed: True
+***********************************************************
 
 Instance C:
 

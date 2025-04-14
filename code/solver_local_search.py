@@ -23,7 +23,7 @@ NUMBER_RESTARTS = 50
 TABU_LIST = []
 MAX_TABU_SIZE = 400
 MAX_ITER_BEFORE_SWAP_BORDER = 10
-MAX_TIME = 600
+MAX_TIME = 900
 ##############
 ### SOLVER ###
 ##############
@@ -38,7 +38,7 @@ def solve_local_search(eternity_puzzle, r=random.random()):
     # Configuration #
     #################
     r = 0.18062110343039572
-    print(f'Seed: {r}')
+    # print(f'Seed: {r}')
     random.seed(r)      
     ##################
     # Initialisation de la solution

@@ -20,7 +20,7 @@ EAST = 3
 #########################
 # Configuration Globale #
 #########################
-MAX_TABU_SIZE = 360
+MAX_TABU_SIZE = 250
 MAX_ITER_1 = 400
 MAX_TIME_1 = 60
 BETA_1 = 0.5
@@ -30,7 +30,7 @@ RATIO_DESTRUCTION = 0.1
 NB_BEST_RESTART_BEF_RANDOM = 1
 NB_RANDOM_RESTART_BEF_BEST = 4
 MAX_ITER = 10000
-MAX_ITER_TABU = 400
+MAX_ITER_TABU = 350
 ITER_CHANGE_RATIO = 10
 LOG = True 
 ##############
@@ -64,6 +64,12 @@ def solve_advanced(eternity_puzzle):
     iter_to_change_ratio = 0
     on_best = False 
     while best_score_overall != 0 and (time.time() - start_time) <= MAX_TIME:
+        if iter_to_change_ratio < ITER_CHANGE_RATIO:
+            NB_BEST_RESTART_BEF_RANDOM = 4
+            NB_RANDOM_RESTART_BEF_BEST = 1 
+        else:
+            NB_BEST_RESTART_BEF_RANDOM = 1
+            NB_RANDOM_RESTART_BEF_BEST = 4 
         if (nb_iter % (NB_BEST_RESTART_BEF_RANDOM + NB_RANDOM_RESTART_BEF_BEST)) < NB_BEST_RESTART_BEF_RANDOM:
             # On recommence en partant de la meilleure solution trouvee jusqu'a present
             on_best = True
@@ -104,8 +110,8 @@ def solve_advanced(eternity_puzzle):
         best_sol = copy.deepcopy(solver.solution)
         best_score = solver._get_conflicts()
         # Si tabu_done vaut True, la recherche tabou ne sera pas effectuee en fin de LNS. Mettre a False pour tester mais peu concluant 
-        # tabu_done = False 
-        tabu_done = True
+        tabu_done = False 
+        # tabu_done = True
         while (not tabu_done) or (best_score != 0 and (time.time() - start_time) <= MAX_TIME and iter_without_accept < MAX_ITER and iter_without_improvement < MAX_ITER) :
             if on_best:
                 destructed_sol, id_destructed_pieces, destructed_pieces = solver._destruct_ratio_conflicts_and_ratio()
@@ -225,6 +231,7 @@ class Solver:
         self.tabu = []
 
         self.ratio_destruction = RATIO_DESTRUCTION
+        self.ratio_no_conflicts = 1.5
 
     def _get_conflicts(self):
         return self.puzzle.get_total_n_conflict(self.solution)
@@ -816,7 +823,7 @@ class Solver:
         nb_destructed_pieces = min(int(self.size**2 * self.ratio_destruction), len(pieces_with_conflicts))
         id_destructed_pieces = [i for i in pieces_with_conflicts[:nb_destructed_pieces]]
         random.shuffle(pieces_without_conflicts)
-        id_destructed_pieces = id_destructed_pieces + [i for i in pieces_without_conflicts[:int(self.size**2 * self.ratio_destruction/2)]]
+        id_destructed_pieces = id_destructed_pieces + [i for i in pieces_without_conflicts[:int(self.size**2 * self.ratio_destruction * self.ratio_no_conflicts)]]
         for i in id_destructed_pieces:
             destructed_pieces.append(self.solution[i])
             new_sol[i] = 0

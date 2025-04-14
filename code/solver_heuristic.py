@@ -24,7 +24,7 @@ def solve_heuristic(eternity_puzzle, r=random.random()):
     ##################################
     r = 0.18062110343039572
     random.seed(r)
-    print(f'Seed: {r}')
+    # print(f'Seed: {r}')
     NUMBER_GEN = 100
     ##################################
 
